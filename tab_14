@@ -1,0 +1,19 @@
+#!/bin/bash
+echo "Program znajdujacy najwiekszy elementów tablicy"
+#n=${#tablica[*]}
+read -p "wielkosc tablicy = " n
+j=0
+while [ $j -lt $n ]
+do
+read -p "podaj $j liczbe w tablicy = " a
+tablica[$j]=$a
+j=$[j + 1] 
+done
+max=0
+i=0
+while [ $i -lt $n ]
+do
+max $[s * tablica[i]]
+i=$[i + 1]
+done
+echo "Iloczyn elementów tablicy wynosi $s"

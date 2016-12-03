@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "Program obliczający sumę elementów tablicy"
+tablica=(1 18 5 4 7)
+n=${#tablica[*]}
+s=0
+i=0
+while [ $i -lt $n ]
+do
+s=$[s + tablica[i]]
+i=$[i + 1]
+done
+echo "Suma elementów tablicy wynosi $s"

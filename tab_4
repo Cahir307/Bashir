@@ -16,6 +16,5 @@ while [ $i -lt $n ]
 do
 s=$[s + tablica[i]]
 i=$[i + 2]
-# dla sredniej i=1; srednia= $s/n; wyswietl srednia;
 done
 echo "Suma elementów tablicy wynosi $s"
