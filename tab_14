@@ -1,19 +1,25 @@
 #!/bin/bash
-echo "Program znajdujacy najwiekszy elementów tablicy"
+echo "Program suma dwoch tablic"
 #n=${#tablica[*]}
-read -p "wielkosc tablicy = " n
+read -p "wielkosc tablic = " n
 j=0
 while [ $j -lt $n ]
 do
 read -p "podaj $j liczbe w tablicy = " a
-tablica[$j]=$a
+tablica1[$j]=$a
 j=$[j + 1] 
 done
-max=0
+j=0
+while [ $j -lt $n ]
+do
+read -p "podaj $j liczbe w tablicy = " a
+tablica2[$j]=$a
+j=$[j + 1] 
+done
 i=0
 while [ $i -lt $n ]
 do
-max $[s * tablica[i]]
+tablica3[$i]=$[tablica1[i] + tablica2[i]]
 i=$[i + 1]
 done
-echo "Iloczyn elementów tablicy wynosi $s"
+echo "${#tablica[*]}"
