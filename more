@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "Sprawdzanie czy liczba jest większa od 0, a mniejsza od 11."
+read -p "a = " a
+if [ $a -gt 0 -a $a -lt 11 ]
+then
+echo "a jest w zakresie" 
+else
+echo "a jest poza zakresem"
+fi
+exit 0

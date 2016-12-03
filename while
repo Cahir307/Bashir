@@ -1,0 +1,16 @@
+#!/bin/bash
+echo "Wyświetlanie liczby parzyste od a do n"
+read -p "a = " a
+read -p "n = " n
+#Sprawdzenie, czy jest możliwe wyświetlenie liczb
+if ((a % 2 == 0))
+then
+#Wyświetlenie liczb
+for ((i=a;i <= n; i=i+2))
+do
+echo "$i"
+done
+else
+#Komunikat o błędzie
+echo "a jest nieparzyste"
+fi

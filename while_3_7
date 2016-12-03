@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "iloczyn liczb podawanych przez użytkownika"
+while [ $a -ne 0 ]
+do
+read -p "Podaj liczbę nr $i = " a
+m=$[m * a]
+i=$[i + 1]
+echo "ilczyn liczb wynosi $m"
+done
+#fi

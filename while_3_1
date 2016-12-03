@@ -1,0 +1,18 @@
+#!/bin/bash
+echo "Suma liczb podawanych przez użytkownika"
+echo "Podaj ilość liczb"
+read -p "n = " n
+if [ $n -ge 1 ]
+then
+i=1
+s=0
+while [ $i -le $n ]
+do
+read -p "Podaj liczbę nr $i = " a
+s=$[s + a]
+i=$[i + 1]
+done
+echo "Suma liczb wynosi $s"
+else
+echo "n < 1"
+fi

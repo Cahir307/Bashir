@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "Podaj bok kwadratu"
+read -p "a = " a
+#read -p "b = " b
+#Obliczenia
+c=$[$a**2]
+echo "Pole kwadratu = $c"
+exit 0 

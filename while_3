@@ -1,0 +1,16 @@
+#!/bin/bash
+echo "Wyświetlanie w pierwszej kolumnie wartości od a do n rosnąco, a w drugiej malejąco"
+read -p "a = " a
+read -p "n = " n
+#Sprawdzenie, czy jest możliwe wyświetlenie liczb
+##then
+#Wyświetlenie liczb
+for ((i=1; i <= n; i=i+2))
+do 
+s=$[i * (i + 2 )]
+echo "$s"
+done
+#else
+#Komunikat o błędzie
+#echo "a jest nieparzyste"
+#fi

@@ -1,0 +1,16 @@
+#!/bin/bash
+echo "najwieksza z podanych liczb"
+#echo "Podaj ilość liczb"
+read -p "max = " max
+if [ $max -ne 0 ]
+then
+i=1
+while [ $max -gt $a ]
+do
+read -p "Podaj liczbę nr $i = " a
+max=a
+i=$[i + 1]
+done
+else
+echo "nawieksza wartosc to $max"
+fi

@@ -1,0 +1,11 @@
+#!/bin/bash
+#echo "$1"
+#echo "$2"
+if [ $# -eq 2 ]
+then
+c=$[ $1 + $2 ]
+echo "suma parametrow = $c" 
+else
+echo "za malo parametow"
+fi
+exit 0

@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Wyświetlanie kwadraty kolejnych liczb nieparzystych od 1 do 11"
+for i in {1..11..2}
+do 
+echo "$k = $[ i * i ]"
+done
