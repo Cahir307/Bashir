@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "sprawdzający, czy podany ciąg znaków to adres e-mail"
+read -p "Podaj email " email
+if [[ "$email" =~ ^[A-Za-z0-9.]+@[A-Za-z0-9.]+\.[A-Za-z]{2,4}$ ]]
+then
+echo "email poprawny"
+else
+echo "email niepoprawny"
+fi
