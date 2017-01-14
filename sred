@@ -1,0 +1,10 @@
+function sred()
+{
+while [ $i -lt $n ]
+do
+s=$[s + tablica[i]]
+i=$[i + 1]
+srednia=$[s / n]
+echo $srednia
+done
+}

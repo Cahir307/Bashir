@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Program obliczający średnią wszystkich elementów tablicy"
+. tab
+tab
+i=0
+. sred
+sred
+#$d=$(sred)
+#echo "średnia wszystkich elementów tablicy wynosi $d"
