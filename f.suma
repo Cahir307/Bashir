@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "funkcja sumy, podaj liczby:"
+read -p "a = " a
+read -p "b = " b
+function suma()
+{
+local c=$[$1 + $2]
+echo $c
+}
+zmienna=$(suma $a $b)
+echo $zmienna
+
