@@ -1,8 +1,0 @@
-#!/bin/bash
-echo "Podaj boki prostokąta"
-read -p "a = " a
-read -p "b = " b
-#Obliczenia
-c=$[$a*$b]
-echo "Pole prostokąta = $c"
-exit 0 
