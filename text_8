@@ -1,9 +1,0 @@
-#!/bin/bash
-echo "sprawdzający, czy ciąg znaków jest kodem pocztowym w formie: dwie cyfry kreska trzy cyfry."
-read -p "Podaj kod " kod
-if [[ $kod =~ ^[0-9][0-9]-[0-9][0-9][0-9] ]]
-then
-echo "kod poprawny"
-else
-echo "kod niepoprawny"
-fi
