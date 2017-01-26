@@ -1,5 +1,0 @@
-#!/bin/bash
-#czyli to nie jest widoczne?
-echo "test skryptu"
-exit 0
-
