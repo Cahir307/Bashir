@@ -1,8 +1,0 @@
-#!/bin/bash
-echo "Podaj bok szescianu"
-read -p "a = " a
-#read -p "b = " b
-#Obliczenia
-c=$[$a**3]
-echo "Objętość szescianu = $c"
-exit 0 
