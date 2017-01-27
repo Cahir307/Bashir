@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "tablice 6.1-10"
+echo "tablice 6.1-17"
 #2
 : '
 echo "Program obliczający sumę elementów tablicy"
@@ -7,7 +7,7 @@ tablica=(1 18 5 4 7)
 n=${#tablica[*]}
 s=0
 i=0
-while [ $i -lt $n ]
+while (( $j < $n ))
 do
 s=$[s + tablica[i]]
 i=$[i + 1]
@@ -19,7 +19,7 @@ echo "Suma elementów tablicy wynosi $s"
 echo "Program obliczający sumę elementów o indeksach parzystych tablicy"
 read -p "wielkosc tablicy = " n
 j=0
-while [ $j -lt $n ]
+while (( $j < $n ))
 do
 read -p "podaj liczbe o indexie $j w tablicy = " a
 tablica[$j]=$a
@@ -27,7 +27,7 @@ j=$[j + 1]
 done
 s=0
 i=0
-while [ $i -lt $n ]
+while (( $j < $n ))
 do
 s=$[s + tablica[i]]
 i=$[i + 2]
@@ -39,7 +39,7 @@ echo "Suma elementów tablicy wynosi $s"
 echo "Program obliczający sumę elementów o indeksach parzystych tablicy"
 read -p "wielkosc tablicy = " n
 j=0
-while [ $j -lt $n ]
+while (( $j < $n ))
 do
 read -p "podaj liczbe o indexie $j w tablicy = " a
 tablica[$j]=$a
@@ -47,7 +47,7 @@ j=$[j + 1]
 done
 s=0
 i=0
-while [ $i -lt $n ]
+while (( $i < $n ))
 do
 s=$[s + tablica[i]]
 i=$[i + 2]
@@ -59,7 +59,7 @@ echo "Suma elementów tablicy wynosi $s"
 echo "Program obliczający sumę elementów o indeksach nieparzystych tablicy"
 read -p "wielkosc tablicy = " n
 j=0
-while [ $j -lt $n ]
+while (( $j < $n ))
 do
 read -p "podaj liczbe o indexie $j w tablicy = " a
 tablica[$j]=$a
@@ -67,7 +67,7 @@ j=$[j + 1]
 done
 s=0
 i=1
-while [ $i -lt $n ]
+while (( $i < $n ))
 do
 s=$[s + tablica[i]]
 i=$[i + 2]
@@ -79,20 +79,15 @@ echo "Suma elementów tablicy wynosi $s"
 echo "Program obliczający średnią arytmetyczną liczb znajdujących się w tablicy"
 read -p "wielkosc tablicy = " n
 j=0
-while [ $j -lt $n ]
+s=0
+while (( $j < $n ))
 do
 read -p "podaj liczbe o indexie $j w tablicy = " a
 tablica[$j]=$a
+s=$[s + tablica[j]]
 j=$[j + 1] 
 done
-s=0
-i=0
-while [ $i -lt $n ]
-do
-s=$[s + tablica[i]]
-i=$[i + 1]
 srednia=$[s / n]
-done
 echo "srednia elementów tablicy wynosi $srednia"
 '
 #7
@@ -100,18 +95,33 @@ echo "srednia elementów tablicy wynosi $srednia"
 echo "Program obliczający iloczyn elementów tablicy"
 read -p "wielkosc tablicy = " n
 j=0
-while [ $j -lt $n ]
+s=1
+while (( $j < $n ))
 do
 read -p "podaj liczbe o indexie $j w tablicy = " a
 tablica[$j]=$a
+s=$[s * tablica[j]]
 j=$[j + 1] 
 done
+echo "Iloczyn elementów tablicy wynosi $s"
+'
+#8
+: '
+echo "Program obliczający iloczyn elementów tablicy !=0"
+read -p "wielkosc tablicy = " n
+j=0
 s=1
-i=0
-while [ $i -lt $n ]
+while (( $j < $n ))
 do
-s=$[s * tablica[i]]
-i=$[i + 1]
+read -p "podaj liczbe o indexie $j w tablicy = " a
+tablica[$j]=$a
+if (( $[tablica[j]] == 0 ))
+then
+j=$[j + 1]
+else
+s=$[s * tablica[j]]
+j=$[j + 1]
+fi
 done
 echo "Iloczyn elementów tablicy wynosi $s"
 '
@@ -120,7 +130,7 @@ echo "Iloczyn elementów tablicy wynosi $s"
 echo "Program znajdujacy najwiekszy z elementów tablicy"
 read -p "wielkosc tablicy = " n
 j=0
-while [ $j -lt $n ]
+while (( $j < $n ))
 do
 read -p "podaj  liczbe o indexie $j w tablicy = " a
 tablica[$j]=$a
@@ -128,8 +138,6 @@ max=$a
 if (( $a > $max ))
 then 
 max=$a
-else
-echo
 fi
 j=$[j + 1] 
 done
@@ -140,7 +148,7 @@ echo "najwiekszy z elementów tablicy wynosi $max"
 echo "Program znajdujacy najwiekszy z elementów tablicy o indexach parzystych"
 read -p "wielkosc tablicy = " n
 j=0
-while [ $j -lt $n ]
+while (( $j < $n ))
 do
 read -p "podaj liczbe o indexie $j w tablicy = " a
 tablica[$j]=$a
@@ -154,38 +162,86 @@ max=$a
 if (( $a > $max ))
 then 
 max=$a
-else
-echo
 fi
 j=$[j + 2] 
 done
 echo "najwiekszy z elementów tablicy o indexach parzystych wynosi $max"
+'
+#11
+: '
+echo "Program znajdujacy najmniejszy z elementów tablicy"
+read -p "wielkosc tablicy = " n
+j=0
+min=${tablica[$j]}
+while (( $j < $n ))
+do
+read -p "podaj liczbe o indexie $j w tablicy = " a
+tablica[$j]=$a
+if (( $a < $min ))
+then 
+min=$a
+fi
+j=$[j + 1] 
+done
+echo "najmniejszy z elementów tablicy wynosi $min"
+'
+#12
+: '
+echo "Program znajdujący rozpiętość liczb znajdujących się w tablicy n-elementowej."
+read -p "wielkosc tablicy = " n
+j=0
+min=${tablica[$j]}
+max=${tablica[$j]}
+while (( $j < $n ))
+do
+read -p "podaj liczbe o indexie $j w tablicy = " a
+tablica[$j]=$a
+if (( $a < $min ))
+then 
+min=$a
+elif (( $a > $max ))
+then 
+max=$a
+fi
+j=$[j + 1] 
+done
+r=$[max - min]
+echo "rozpiętość liczb elementów tablicy wynosi $r"
+'
+#13
+: '
+echo "znajdujący w tablicy n-elementowej częstość występowania podanej przez użytkownika wartości"
+read -p "szukana liczba = " w
+read -p "wielkosc tablicy = " n
+j=0
+k=0
+while (( $j < $n ))
+do
+read -p "podaj liczbe o indexie $j w tablicy = " a
+tablica[$j]=$a
+if (( $a == $w ))
+then 
+k=$[k + 1]
+fi
+j=$[j + 1] 
+done
+echo "częstość występowania elementu $w w tablicy wynosi $k"
 '
 #14
 : '
 echo "Program suma dwoch tablic"
 read -p "wielkosc tablic = " n
 j=0
-while [ $j -lt $n ]
+while (( $j < $n ))
 do
-read -p "podaj liczbe o indexie $j w tablicy = " a
+read -p "podaj liczbe o indexie $j w tablicy 1 = " a
 tablica1[$j]=$a
+read -p "podaj liczbe o indexie $j w tablicy 2 = " b
+tablica2[$j]=$b
+tablica3[$j]=$[tablica1[$j] + tablica2[$j]]
 j=$[j + 1] 
 done
-j=0
-while [ $j -lt $n ]
-do
-read -p "podaj liczbe o indexie $j w tablicy = " a
-tablica2[$j]=$a
-j=$[j + 1] 
-done
-i=0
-while [ $i -lt $n ]
-do
-tablica3[$i]=$[tablica1[i] + tablica2[i]]
-i=$[i + 1]
-done
-echo "${#tablica3[*]}"
+echo "${tablica3[*]}"
 '
 #15
 : '
@@ -209,36 +265,61 @@ k=$[k - 1]
 done
 echo "${tablica2[*]}"
 '
+#16
+: '
+echo "znajdujący w tablicy n-elementowej liczbę wystąpień par wartości 25 i 31"
+read -p "wielkosc tablicy = " n
+j=0
+k=0
+m=0
+l=0
+while (( $j < $n ))
+do
+read -p "podaj liczbe o indexie $j w tablicy = " a
+tablica[$j]=$a
+if (( $a == 25 ))
+then 
+k=$[k + 1]
+elif (( $a == 31 ))
+then 
+m=$[m + 1]
+fi
+j=$[j + 1]
+if (( $k <= $m ))
+then
+l=$k
+else
+l=$m
+fi 
+done
+echo "częstość par wartości 25 i 31 w tablicy wynosi $l"
+'
 #17
 : '
 echo "wpisujący do dwóch tablic jednowymiarowych wartości podawane przez użytkownika"
 read -p "wielkosc tablic = " n
 read -p "wielkosc graniczna = " b
-for (( j = 0; j < n; j++ ))
-do 
-for (( i = 0; i < n; i++ ))
+j=0
+i=0
+k=0
+while (( $k < $n ))
+read -p "podaj liczbe o indexie $k w tablicy = " a
 do
-read -p "podaj liczbe o indexie $j w tablicy = " a
 if (( $a > $b ))
 then
 tablica1[$j]=$a
-#j=$[j + 1]
+j=$[j + 1]
 elif (( $a < $b ))
 then
 tablica2[$i]=$a
-#i=$[i + 1]
-tablica2[$j]=$a
-else
-tablica2[$j]=0
-tablica1[$i]=0
-#j=$[j + 1]
-#i=$[i + 1]
+i=$[i + 1]
 fi
+k=$[(i + j) / 2]
 done
 echo "${tablica1[*]}"
 echo "${tablica2[*]}"
-done
 '
+
 
 
 
