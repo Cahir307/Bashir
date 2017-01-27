@@ -1,4 +1,7 @@
 #!/bin/bash
+echo "tablice 6.1-10"
+#2
+: '
 echo "Program obliczający sumę elementów tablicy"
 tablica=(1 18 5 4 7)
 n=${#tablica[*]}
@@ -10,3 +13,235 @@ s=$[s + tablica[i]]
 i=$[i + 1]
 done
 echo "Suma elementów tablicy wynosi $s"
+'
+#3
+: '
+echo "Program obliczający sumę elementów o indeksach parzystych tablicy"
+read -p "wielkosc tablicy = " n
+j=0
+while [ $j -lt $n ]
+do
+read -p "podaj liczbe o indexie $j w tablicy = " a
+tablica[$j]=$a
+j=$[j + 1] 
+done
+s=0
+i=0
+while [ $i -lt $n ]
+do
+s=$[s + tablica[i]]
+i=$[i + 2]
+done
+echo "Suma elementów tablicy wynosi $s"
+'
+#4
+: '
+echo "Program obliczający sumę elementów o indeksach parzystych tablicy"
+read -p "wielkosc tablicy = " n
+j=0
+while [ $j -lt $n ]
+do
+read -p "podaj liczbe o indexie $j w tablicy = " a
+tablica[$j]=$a
+j=$[j + 1] 
+done
+s=0
+i=0
+while [ $i -lt $n ]
+do
+s=$[s + tablica[i]]
+i=$[i + 2]
+done
+echo "Suma elementów tablicy wynosi $s"
+'
+#5
+: '
+echo "Program obliczający sumę elementów o indeksach nieparzystych tablicy"
+read -p "wielkosc tablicy = " n
+j=0
+while [ $j -lt $n ]
+do
+read -p "podaj liczbe o indexie $j w tablicy = " a
+tablica[$j]=$a
+j=$[j + 1] 
+done
+s=0
+i=1
+while [ $i -lt $n ]
+do
+s=$[s + tablica[i]]
+i=$[i + 2]
+done
+echo "Suma elementów tablicy wynosi $s"
+'
+#6
+: '
+echo "Program obliczający średnią arytmetyczną liczb znajdujących się w tablicy"
+read -p "wielkosc tablicy = " n
+j=0
+while [ $j -lt $n ]
+do
+read -p "podaj liczbe o indexie $j w tablicy = " a
+tablica[$j]=$a
+j=$[j + 1] 
+done
+s=0
+i=0
+while [ $i -lt $n ]
+do
+s=$[s + tablica[i]]
+i=$[i + 1]
+srednia=$[s / n]
+done
+echo "srednia elementów tablicy wynosi $srednia"
+'
+#7
+: '
+echo "Program obliczający iloczyn elementów tablicy"
+read -p "wielkosc tablicy = " n
+j=0
+while [ $j -lt $n ]
+do
+read -p "podaj liczbe o indexie $j w tablicy = " a
+tablica[$j]=$a
+j=$[j + 1] 
+done
+s=1
+i=0
+while [ $i -lt $n ]
+do
+s=$[s * tablica[i]]
+i=$[i + 1]
+done
+echo "Iloczyn elementów tablicy wynosi $s"
+'
+#9
+: '
+echo "Program znajdujacy najwiekszy z elementów tablicy"
+read -p "wielkosc tablicy = " n
+j=0
+while [ $j -lt $n ]
+do
+read -p "podaj  liczbe o indexie $j w tablicy = " a
+tablica[$j]=$a
+max=$a
+if (( $a > $max ))
+then 
+max=$a
+else
+echo
+fi
+j=$[j + 1] 
+done
+echo "najwiekszy z elementów tablicy wynosi $max"
+'
+#10
+: '
+echo "Program znajdujacy najwiekszy z elementów tablicy o indexach parzystych"
+read -p "wielkosc tablicy = " n
+j=0
+while [ $j -lt $n ]
+do
+read -p "podaj liczbe o indexie $j w tablicy = " a
+tablica[$j]=$a
+j=$[j + 1] 
+done
+j=0
+while (( $j < $n ))
+do
+a=${tablica[$j]}
+max=$a
+if (( $a > $max ))
+then 
+max=$a
+else
+echo
+fi
+j=$[j + 2] 
+done
+echo "najwiekszy z elementów tablicy o indexach parzystych wynosi $max"
+'
+#14
+: '
+echo "Program suma dwoch tablic"
+read -p "wielkosc tablic = " n
+j=0
+while [ $j -lt $n ]
+do
+read -p "podaj liczbe o indexie $j w tablicy = " a
+tablica1[$j]=$a
+j=$[j + 1] 
+done
+j=0
+while [ $j -lt $n ]
+do
+read -p "podaj liczbe o indexie $j w tablicy = " a
+tablica2[$j]=$a
+j=$[j + 1] 
+done
+i=0
+while [ $i -lt $n ]
+do
+tablica3[$i]=$[tablica1[i] + tablica2[i]]
+i=$[i + 1]
+done
+echo "${#tablica3[*]}"
+'
+#15
+: '
+echo "kopiujący elementy jednej tablicy do drugiej, w odwrotnej kolejności"
+read -p "wielkosc tablic = " n
+j=0
+while (( $j < $n ))
+do
+read -p "podaj liczbe o indexie $j w tablicy 1 = " a
+tablica1[$j]=$a
+j=$[j + 1]
+done
+echo "${tablica1[*]}"
+i=0
+k=$[n - 1]
+while (( $i < $n ))
+do
+tablica2[$i]=$[tablica1[$k]]
+i=$[i + 1]
+k=$[k - 1]
+done
+echo "${tablica2[*]}"
+'
+#17
+: '
+echo "wpisujący do dwóch tablic jednowymiarowych wartości podawane przez użytkownika"
+read -p "wielkosc tablic = " n
+read -p "wielkosc graniczna = " b
+for (( j = 0; j < n; j++ ))
+do 
+for (( i = 0; i < n; i++ ))
+do
+read -p "podaj liczbe o indexie $j w tablicy = " a
+if (( $a > $b ))
+then
+tablica1[$j]=$a
+#j=$[j + 1]
+elif (( $a < $b ))
+then
+tablica2[$i]=$a
+#i=$[i + 1]
+tablica2[$j]=$a
+else
+tablica2[$j]=0
+tablica1[$i]=0
+#j=$[j + 1]
+#i=$[i + 1]
+fi
+done
+echo "${tablica1[*]}"
+echo "${tablica2[*]}"
+done
+'
+
+
+
+
+
+
