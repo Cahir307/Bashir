@@ -1,0 +1,39 @@
+﻿#!/bin/bash
+echo "Program obliczający liczbę wystąpień zadanego znaku w zmiennej tekstowej"
+read -p "Podaj tekst " str
+read -p "Podaj znak " char
+n=${#str}
+licznik=0
+i=0
+while [ $i -lt $n ]
+do
+if [ "${str:$i:1}" = $char ]
+then
+licznik=$[licznik + 1]
+fi
+i=$[i + 1]
+done
+echo "Liczba wystąpień znaku $char wynosi $licznik"
+
+#7
+: '
+echo "sprawdzający, czy podany ciąg znaków to adres e-mail"
+read -p "Podaj email " email
+if [[ "$email" =~ ^[A-Za-z0-9.]+@[A-Za-z0-9.]+\.[A-Za-z]{2,4}$ ]]
+then
+echo "email poprawny"
+else
+echo "email niepoprawny"
+fi
+'
+#8
+: '
+echo "sprawdzający, czy ciąg znaków jest kodem pocztowym w formie: dwie cyfry kreska trzy cyfry."
+read -p "Podaj kod " kod
+if [[ $kod =~ ^[0-9][0-9]-[0-9][0-9][0-9] ]]
+then
+echo "kod poprawny"
+else
+echo "kod niepoprawny"
+fi
+'
