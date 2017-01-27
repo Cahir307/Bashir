@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/bin/bash
 echo " 1.2-10
 echo "Podaj bok"
@@ -15,3 +16,22 @@ c=$[$a ** 2] #pole kwadratu
 #c=$[6 * $a ** 2] #pole szescianu
 #c=$[$a ** 3] #objetosc szescianu
 echo "Pole = $c"
+=======
+#!/bin/bash
+echo " 1.2-10
+echo "Podaj bok"
+read -p "a = " a
+#read -p "b = " b
+#read -p "h = " h
+#read -p "r = " r
+#p=3
+#Obliczenia
+c=$[$a ** 2] #pole kwadratu
+#c=$[$a * $b] #pole prostokata
+#c=$[$a * $h] #pole trojkata
+#c=$[2 * $p * $r] #obwod kola 
+#c=$[$p * $r ** 2] #pole kola
+#c=$[6 * $a ** 2] #pole szescianu
+#c=$[$a ** 3] #objetosc szescianu
+echo "Pole = $c"
+>>>>>>> origin/master

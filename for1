@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿#!/bin/bash
 echo " petle 3.1-8"
 echo "Wyświetlanie kwadraty kolejnych liczb nieparzystych od 1 do 11"
@@ -22,3 +23,29 @@ for i in {1..30..1}
 do
 echo "$i	$[ 31 - i ]"  
 done
+=======
+﻿#!/bin/bash
+echo " petle 3.1-8"
+echo "Wyświetlanie kwadraty kolejnych liczb nieparzystych od 1 do 11"
+
+#for i in {1..12..1}
+#do 
+#echo "$i * $i = $[ i * i ]"
+#done
+#for i in {1..11..2}
+#do 
+#echo "$i * $i = $[ i * i ]"
+#done
+#for i in {1..20..1}
+#do 
+#echo "$i * $[ i + 1 ] = $[ i * (i + 1) ]"
+#done
+#for i in {2..24..2}
+#do
+#echo "$i * $[ i + 2 ] = $[ i * (i +2) ]"
+#done
+for i in {1..30..1}
+do
+echo "$i	$[ 31 - i ]"  
+done
+>>>>>>> origin/master

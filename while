@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/bin/bash
 echo "pentle 5.1-7"
 #1
@@ -120,3 +121,127 @@ fi
 echo "potega wynosi $p"
 '
 
+=======
+#!/bin/bash
+echo "pentle 5.1-7"
+#1
+: '
+echo "Suma liczb podawanych przez użytkownika"
+echo "Podaj ilość liczb"
+read -p "n = " n
+if [ $n -ge 1 ]
+then
+i=1
+s=0
+while [ $i -le $n ]
+do
+read -p "Podaj liczbę nr $i = " a
+s=$[ s + a ]
+i=$[ i + 1 ]
+done
+echo "Suma liczb wynosi $s"
+else
+echo "n < 1"
+fi
+'
+#2
+: '
+echo "iloczyn liczb podawanych przez użytkownika"
+echo "Podaj ilość liczb"
+read -p "n = " n
+if [ $n -ge 1 ]
+then
+i=1
+m=1
+while [ $i -le $n ]
+do
+read -p "Podaj liczbę nr $i = " a
+m=$[ m * a ]
+i=$[ i + 1 ]
+done
+echo "ilczyn liczb wynosi $m"
+else
+echo "n < 1"
+fi
+'
+#3
+: '
+echo "Suma liczb podawanych przez użytkownika"
+s=0
+i=1
+read -p "Podaj liczbę nr $i = " a
+while (( $s < 100 ))
+do
+i=$[ i + 1 ]
+read -p "Podaj liczbę nr $i = " a
+s=$[ s + a ]
+done
+echo "Suma liczb wynosi $s"
+'
+#4
+: '
+echo "najmniejsza z podanych liczb"
+echo "Podaj ilość liczb"
+read -p "n = " n
+read -p "a = " a
+min=$a
+for (( i = 2; i <= $n; i++ ))
+do
+read -p "Podaj liczbę nr $i = " a
+if (( $min > $a ))
+then
+min=$a
+fi
+done
+echo "najmniejsza wartosc to $min"
+'
+#5
+: '
+echo "najwieksza z podanych liczb"
+echo "Podaj ilość liczb"
+read -p "n = " n
+read -p "a = " a
+max=$a
+for (( i = 2; i <= $n; i++ ))
+do
+read -p "Podaj liczbę nr $i = " a
+if (( $a == 0 ))
+then 
+echo " 0 konczy obliczenia"
+elif (( $a > $max ))
+then
+max=$a
+fi
+done
+echo "nawieksza wartosc to $max"
+'
+#7
+: ' 
+echo "iloczyn liczb podawanych przez użytkownika"
+while [ $a -ne 0 ]
+do
+read -p "Podaj liczbę nr $i = " a
+m=$[m * a]
+i=$[i + 1]
+echo "ilczyn liczb wynosi $m"
+done
+'
+#8
+: '
+echo "potega a do b"
+read -p "a = " a
+read -p "b = " b
+p=1
+if (( b == 0 ))
+then
+echo
+else
+for (( i = 1; i <= $b; i++ ))
+do
+p=$[p *a]
+done
+fi
+echo "potega wynosi $p"
+'
+
+>>>>>>> origin/master
